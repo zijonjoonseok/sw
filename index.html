@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkU - 대학생 스터디 매칭 플랫폼</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar glass-container">
+        <div class="logo" id="nav-logo">
+            <span>LinkU</span>
+        </div>
+        <div class="nav-links" id="nav-links-container">
+            <!-- Dynamic Nav links will be placed here -->
+        </div>
+        <div class="nav-profile" id="nav-profile-container">
+            <!-- Dynamic Profile/Login button will be placed here -->
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        
+        <!-- Dashboard Page -->
+        <div id="dashboard-page" class="page active">
+            <!-- Dashboard View Rendered Here -->
+        </div>
+
+        <!-- Search / Discover Page -->
+        <div id="search-page" class="page">
+            <!-- Search & Filters View Rendered Here -->
+        </div>
+
+        <!-- Profile & Interest Registration Page -->
+        <div id="interests-page" class="page">
+            <!-- Interest Settings View Rendered Here -->
+        </div>
+
+        <!-- Study Detail Page -->
+        <div id="detail-page" class="page">
+            <!-- Study Detail View Rendered Here -->
+        </div>
+
+        <!-- Chat Room Page -->
+        <div id="chat-page" class="page">
+            <!-- Chat Room View Rendered Here -->
+        </div>
+
+        <!-- Auth Page (Login / Sign Up) -->
+        <div id="auth-page" class="page">
+            <!-- Auth Form Rendered Here -->
+        </div>
+
+    </main>
+
+    <!-- Create Study Modal (Global Overlay) -->
+    <div id="create-study-modal" class="modal-overlay">
+        <div class="modal-content glass-container">
+            <div class="modal-header">
+                <h3 class="modal-title">새로운 스터디 개설</h3>
+                <button class="close-btn" id="close-create-modal">&times;</button>
+            </div>
+            <form id="create-study-form">
+                <div class="form-group">
+                    <label class="form-label" for="study-title">스터디 제목</label>
+                    <input type="text" id="study-title" class="form-control" placeholder="스터디 목적이 명확한 제목을 입력해 주세요." required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="study-category">카테고리</label>
+                        <select id="study-category" class="form-control" required>
+                            <option value="">카테고리 선택</option>
+                            <option value="전공">전공 스터디</option>
+                            <option value="어학">어학 자격증/회화</option>
+                            <option value="자격증">국가공인/IT 자격증</option>
+                            <option value="취업/코딩">코딩테스트/취업 준비</option>
+                            <option value="기타">기타 자유 주제</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="study-max-members">최대 모집 인원</label>
+                        <input type="number" id="study-max-members" class="form-control" min="2" max="20" value="4" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="study-schedule">진행 일정</label>
+                        <input type="text" id="study-schedule" class="form-control" placeholder="예: 매주 월, 수요일 오후 3시" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="study-type">진행 방식</label>
+                        <select id="study-type" class="form-control" required>
+                            <option value="대면">대면</option>
+                            <option value="비대면">비대면</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="study-desc">상세 설명</label>
+                    <textarea id="study-desc" class="form-control" placeholder="스터디 진행 규칙, 커리큘럼, 주차별 목표 등을 자유롭게 작성해 주세요." required></textarea>
+                </div>
+                <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px;">
+                    <button type="button" class="btn btn-secondary" id="cancel-create-modal">취소</button>
+                    <button type="submit" class="btn btn-primary">개설하기</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/db.js"></script>
+    <script src="js/views.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
